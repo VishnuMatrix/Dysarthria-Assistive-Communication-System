@@ -1,0 +1,454 @@
+/* ═══════════════════════════════════════════
+   RESULT WRAPPER
+═══════════════════════════════════════════ */
+
+.result-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════
+   SECTION LABELS  (Audio & Transcript, Visual Analysis)
+═══════════════════════════════════════════ */
+
+.row-section-label {
+  padding: 4px 0 2px 0;
+  border-bottom: 2px solid #e2e8f0;
+  margin-top: 6px;
+}
+
+.row-section-label h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 0.2px;
+}
+
+/* ═══════════════════════════════════════════
+   TOP STAT CARDS  (Prediction / Severity / Confidence / Emotion)
+═══════════════════════════════════════════ */
+
+.top-stat-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px 16px 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  position: relative;
+}
+
+.top-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.12);
+}
+
+.tsc-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.pred-icon {
+  background: #ede9fe;
+}
+.sev-icon {
+  background: #fff7ed;
+}
+.conf-icon {
+  background: #eff6ff;
+}
+.emo-icon {
+  background: #fefce8;
+}
+
+.top-stat-card h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 0;
+}
+
+.tsc-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.tsc-sub {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.tsc-empty {
+  font-size: 22px;
+  color: #d1d5db;
+  margin: 0;
+}
+
+.tsc-bar {
+  width: 100%;
+  height: 7px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.tsc-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.6s ease;
+}
+
+.sev-fill {
+  background: linear-gradient(90deg, #22c55e, #f59e0b, #ef4444);
+}
+.conf-fill {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.label-normal {
+  font-size: 20px;
+  font-weight: 700;
+  color: #16a34a;
+  margin: 0;
+}
+.label-dysarthric {
+  font-size: 20px;
+  font-weight: 700;
+  color: #dc2626;
+  margin: 0;
+}
+.sev-value {
+  color: #f59e0b;
+}
+.conf-value {
+  color: #2563eb;
+}
+.emo-value {
+  color: #d97706;
+}
+
+/* ═══════════════════════════════════════════
+   MINI STAT CARDS  (Duration / Speech Rate / etc.)
+═══════════════════════════════════════════ */
+
+.mini-stat-card {
+  background: white;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.mini-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.1);
+}
+
+.msc-icon {
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  background: #eff6ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mini-stat-card h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 3px 0;
+}
+
+.mini-stat-card p {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   DASH CARDS  (Audio / Visual / Analytics)
+═══════════════════════════════════════════ */
+
+.dash-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.dash-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.1);
+}
+
+.dash-card h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.placeholder-card {
+  align-items: center;
+  justify-content: center;
+  color: #d1d5db;
+  font-size: 13px;
+}
+
+.analytics-card {
+  padding: 16px;
+}
+
+.analytics-card h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+/* ═══════════════════════════════════════════
+   STAT LIST
+═══════════════════════════════════════════ */
+
+.stat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 5px 8px;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.stat-list li span {
+  color: #6b7280;
+}
+
+.stat-list li strong {
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* dot-list: green dots before each item */
+.dot-list li::before {
+  content: "●";
+  color: #22c55e;
+  margin-right: 6px;
+  font-size: 8px;
+}
+
+/* ═══════════════════════════════════════════
+   AUDIO
+═══════════════════════════════════════════ */
+
+audio {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ═══════════════════════════════════════════
+   TRANSCRIPT
+═══════════════════════════════════════════ */
+
+.transcript-card {
+  justify-content: flex-start;
+}
+
+.transcript-text {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 3px solid #2563eb;
+}
+
+/* ═══════════════════════════════════════════
+   ANALYSIS IMAGES
+═══════════════════════════════════════════ */
+
+.analysis-image {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ═══════════════════════════════════════════
+   DEBUG PATH
+═══════════════════════════════════════════ */
+
+.debug-path {
+  font-size: 10px;
+  color: #9ca3af;
+  word-break: break-all;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   DOWNLOAD BUTTON
+═══════════════════════════════════════════ */
+
+.dl-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.dl-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════
+   REPORT CARD
+═══════════════════════════════════════════ */
+
+.report-card {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 1.5px solid #bfdbfe;
+  padding: 20px 28px;
+}
+
+.report-card p {
+  font-size: 14px;
+  color: #3b82f6;
+  margin: 0;
+  max-width: 70%;
+}
+
+.report-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+  transition:
+    background 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.report-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* ═══════════════════════════════════════════
+   EMPTY STATE
+═══════════════════════════════════════════ */
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  color: #9ca3af;
+  font-size: 16px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+/* =================================
+   MOBILE VIEW
+================================= */
+
+@media (max-width: 768px) {
+  .stats-grid,
+  .audio-grid,
+  .visual-grid,
+  .analytics-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .top-stat-card,
+  .mini-stat-card,
+  .dash-card {
+    width: 100%;
+  }
+
+  .analysis-image {
+    width: 100%;
+    height: auto;
+  }
+
+  audio {
+    width: 100%;
+  }
+
+  .report-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .report-btn {
+    width: 100%;
+  }
+}

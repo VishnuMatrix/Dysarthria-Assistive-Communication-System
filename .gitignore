@@ -1,0 +1,29 @@
+# Python
+venv/
+.venv/
+backend/venv/
+backend/.venv/
+
+__pycache__/
+*.pyc
+
+# Generated
+uploads/
+generated_audio/
+reports/
+
+# Models
+*.keras
+*.h5
+*.pkl
+*.joblib
+
+# React
+node_modules/
+dist/
+
+# Environment
+.env
+
+*.mp3
+*.wav
