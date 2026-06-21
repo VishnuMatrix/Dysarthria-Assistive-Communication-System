@@ -1,15 +1,24 @@
+import os
+import gdown
+
 from tensorflow.keras.models import load_model
+from utils.mfcc_extractor import extract_mfcc
 
-from utils.mfcc_extractor import (
-    extract_mfcc
-)
+MODEL_PATH = "models/dysarthria_cnn_64mfcc.keras"
 
-# Load model once
+os.makedirs("models", exist_ok=True)
 
-model = load_model(
-    "models/dysarthria_cnn_64mfcc.keras"
-)
+if not os.path.exists(MODEL_PATH):
 
+    print("Downloading CNN model...")
+
+    gdown.download(
+        "https://drive.google.com/uc?id=1P7d4HJH743FBkDsM9RX_rWjXIrGWl2in",
+        MODEL_PATH,
+        quiet=False
+    )
+
+model = load_model(MODEL_PATH)
 
 def predict_dysarthria(audio_path):
 
