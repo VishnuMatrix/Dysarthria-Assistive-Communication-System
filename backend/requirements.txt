@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+tensorflow
+numpy
+librosa
+matplotlib
+soundfile
+gtts
+openai-whisper
+python-multipart
+reportlab
+scipy
+pandas
+scikit-learn
+gdown
